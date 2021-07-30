@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.b2af57fd.chunk.css",
-    "main.js": "/react-gh-pages/static/js/main.a9da42b3.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.a9da42b3.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.d789335c.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.d789335c.js.map",
-    "static/js/2.053e0402.chunk.js": "/react-gh-pages/static/js/2.053e0402.chunk.js",
-    "static/js/2.053e0402.chunk.js.map": "/react-gh-pages/static/js/2.053e0402.chunk.js.map",
-    "static/js/3.950cf5b0.chunk.js": "/react-gh-pages/static/js/3.950cf5b0.chunk.js",
-    "static/js/3.950cf5b0.chunk.js.map": "/react-gh-pages/static/js/3.950cf5b0.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "service-worker.js.map": "/react-gh-pages/service-worker.js.map",
-    "static/css/main.b2af57fd.chunk.css.map": "/react-gh-pages/static/css/main.b2af57fd.chunk.css.map",
-    "static/js/2.053e0402.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.053e0402.chunk.js.LICENSE.txt"
+    "main.css": "/json2dart-model/static/css/main.b2af57fd.chunk.css",
+    "main.js": "/json2dart-model/static/js/main.b3117d66.chunk.js",
+    "main.js.map": "/json2dart-model/static/js/main.b3117d66.chunk.js.map",
+    "runtime-main.js": "/json2dart-model/static/js/runtime-main.884630d1.js",
+    "runtime-main.js.map": "/json2dart-model/static/js/runtime-main.884630d1.js.map",
+    "static/js/2.0755d430.chunk.js": "/json2dart-model/static/js/2.0755d430.chunk.js",
+    "static/js/2.0755d430.chunk.js.map": "/json2dart-model/static/js/2.0755d430.chunk.js.map",
+    "static/js/3.950cf5b0.chunk.js": "/json2dart-model/static/js/3.950cf5b0.chunk.js",
+    "static/js/3.950cf5b0.chunk.js.map": "/json2dart-model/static/js/3.950cf5b0.chunk.js.map",
+    "index.html": "/json2dart-model/index.html",
+    "service-worker.js": "/json2dart-model/service-worker.js",
+    "service-worker.js.map": "/json2dart-model/service-worker.js.map",
+    "static/css/main.b2af57fd.chunk.css.map": "/json2dart-model/static/css/main.b2af57fd.chunk.css.map",
+    "static/js/2.0755d430.chunk.js.LICENSE.txt": "/json2dart-model/static/js/2.0755d430.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d789335c.js",
-    "static/js/2.053e0402.chunk.js",
+    "static/js/runtime-main.884630d1.js",
+    "static/js/2.0755d430.chunk.js",
     "static/css/main.b2af57fd.chunk.css",
-    "static/js/main.a9da42b3.chunk.js"
+    "static/js/main.b3117d66.chunk.js"
   ]
 }
