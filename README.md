@@ -1,6 +1,6 @@
 # Json To Dart Model
 
-
+https://imagine10255.github.io/json2dart-model/
 
 <div align="center">
   <!-- Dependency Status -->
@@ -32,9 +32,6 @@
 
 * React
 * Typescript
-* React router
-* Redux
-  - [redux-saga](https://github.com/redux-saga/redux-saga)
 * styled-component
   - use webStorm
     > Languages & Frameworks > JavaScript > styled-components: add item `media`
