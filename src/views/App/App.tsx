@@ -26,7 +26,7 @@ const convertFieldType = (key: string, field: any) => {
                 return {type: 'int', default: 0};
 
             case 'string':
-                return {type: 'String', default: `''`};
+                return {type: 'String', default: undefined};
 
             case 'object':
                 if(Array.isArray(field)){
@@ -62,7 +62,8 @@ const convertField = (modelName: string, jsonObj: any) => {
             const fieldType = convertFieldType(key, jsonObj[key]);
             const defaultValue = fieldType.default !== undefined ? ` = ${fieldType.default}`:'';
             constructor.push(`       this.${key}${defaultValue},`);
-            field.push(`  ${fieldType.type}${fieldType.default === undefined && fieldType.type !== 'dynamic' ? '?':''} ${key};`);
+            // field.push(`  ${fieldType.type}${fieldType.default === undefined ? '?':''} ${key};`);
+            field.push(`  ${fieldType.type}? ${key};`);
 
             if(fieldType.newObj !== undefined && fieldType.newObjName !== undefined){
                 convertField(fieldType.newObjName, fieldType.newObj);
