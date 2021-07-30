@@ -48,7 +48,10 @@ export function lowerCaseToUpLineCase(str: string): string {
  */
 export function UpperCaseToLowerLineCase(str: string): string {
     if(str){
-        return str.replace(/([A-Z])/g,'_$1').toLowerCase().substr(1);
+        const dataStr = str.replace(/([A-Z])/g,'_$1').toLowerCase();
+        if(dataStr.substr(0, 1) === '_'){
+            return dataStr.substr(1);
+        }
     }
     return '';
 }

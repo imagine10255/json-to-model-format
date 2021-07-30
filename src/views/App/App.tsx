@@ -79,16 +79,23 @@ const convertField = (modelName: string, jsonObj: any) => {
     return dataChild;
 
 
-//     return `
-//   ${modelName}({
-// ${constructor.join('\n')}
-//     });
-//
-// ${field.join('\n')}
-//
-// `
 };
 
+
+const handleDownload = (modelName: string, data: string) => {
+    //藉型別陣列建構的 blob 來建立 URL
+    let fileName = `${UpperCaseToLowerLineCase(modelName)}.dart`;
+    let blob = new Blob([data], {
+        type: "application/octet-stream",
+    });
+    var href = URL.createObjectURL(blob);
+    // 從 Blob 取出資料
+    var link = document.createElement("a");
+    document.body.appendChild(link);
+    link.href = href;
+    link.download = fileName;
+    link.click();
+};
 
 const App = () => {
     const {control, watch} = useForm<IFormData>();
@@ -100,6 +107,7 @@ const App = () => {
             return JSON.parse(jsonString);
         }
     }, [jsonString]);
+
 
 
     const renderDartModel = () => {
@@ -133,6 +141,7 @@ ${row.field.join('\n')}
     `;
 };
 
+    const convertData = renderDartModel();
 
     return (
         <GridThemeProvider gridTheme={setup.gridConfig}>
@@ -188,9 +197,10 @@ ${row.field.join('\n')}
 
                         </Col>
                         <Col col>
+                            <button type="button" onClick={() => handleDownload(modelName, convertData)}>Download</button>
                             <textarea
                                 style={{width: '100%', height: '100vh'}}
-                                value={renderDartModel()}
+                                value={convertData}
                             />
                         </Col>
 
