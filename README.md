@@ -51,15 +51,6 @@ $ yarn dev
 ```
 
 
-## Env
-
-- REACT_APP_SITE_CODE (ex: json2dart-json)
-- REACT_APP_SITE_NAME
-- REACT_APP_SITE_DESC
-- REACT_APP_SITE_ENV (dev, stage, prod)
-- PROXY_API_DOMAIN
-- PROXY_STORAGE_DOMAIN
-
 ## Git Commit
 ```bash
 $ yarn cz

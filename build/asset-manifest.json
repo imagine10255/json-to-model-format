@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.b2af57fd.chunk.css",
-    "main.js": "/static/js/main.1a5d30ef.chunk.js",
-    "main.js.map": "/static/js/main.1a5d30ef.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b8a5f9d6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b8a5f9d6.js.map",
-    "static/js/2.3ae01f15.chunk.js": "/static/js/2.3ae01f15.chunk.js",
-    "static/js/2.3ae01f15.chunk.js.map": "/static/js/2.3ae01f15.chunk.js.map",
-    "static/js/3.8ef4ee6e.chunk.js": "/static/js/3.8ef4ee6e.chunk.js",
-    "static/js/3.8ef4ee6e.chunk.js.map": "/static/js/3.8ef4ee6e.chunk.js.map",
-    "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js",
-    "service-worker.js.map": "/service-worker.js.map",
-    "static/css/main.b2af57fd.chunk.css.map": "/static/css/main.b2af57fd.chunk.css.map",
-    "static/js/2.3ae01f15.chunk.js.LICENSE.txt": "/static/js/2.3ae01f15.chunk.js.LICENSE.txt"
+    "main.css": "/json2dart-model/static/css/main.b2af57fd.chunk.css",
+    "main.js": "/json2dart-model/static/js/main.b3117d66.chunk.js",
+    "main.js.map": "/json2dart-model/static/js/main.b3117d66.chunk.js.map",
+    "runtime-main.js": "/json2dart-model/static/js/runtime-main.884630d1.js",
+    "runtime-main.js.map": "/json2dart-model/static/js/runtime-main.884630d1.js.map",
+    "static/js/2.0755d430.chunk.js": "/json2dart-model/static/js/2.0755d430.chunk.js",
+    "static/js/2.0755d430.chunk.js.map": "/json2dart-model/static/js/2.0755d430.chunk.js.map",
+    "static/js/3.950cf5b0.chunk.js": "/json2dart-model/static/js/3.950cf5b0.chunk.js",
+    "static/js/3.950cf5b0.chunk.js.map": "/json2dart-model/static/js/3.950cf5b0.chunk.js.map",
+    "index.html": "/json2dart-model/index.html",
+    "service-worker.js": "/json2dart-model/service-worker.js",
+    "service-worker.js.map": "/json2dart-model/service-worker.js.map",
+    "static/css/main.b2af57fd.chunk.css.map": "/json2dart-model/static/css/main.b2af57fd.chunk.css.map",
+    "static/js/2.0755d430.chunk.js.LICENSE.txt": "/json2dart-model/static/js/2.0755d430.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b8a5f9d6.js",
-    "static/js/2.3ae01f15.chunk.js",
+    "static/js/runtime-main.884630d1.js",
+    "static/js/2.0755d430.chunk.js",
     "static/css/main.b2af57fd.chunk.css",
-    "static/js/main.1a5d30ef.chunk.js"
+    "static/js/main.b3117d66.chunk.js"
   ]
 }
