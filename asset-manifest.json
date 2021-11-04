@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/json2dart-model/static/css/main.b2af57fd.chunk.css",
-    "main.js": "/json2dart-model/static/js/main.94412881.chunk.js",
-    "main.js.map": "/json2dart-model/static/js/main.94412881.chunk.js.map",
+    "main.js": "/json2dart-model/static/js/main.ea1c0c77.chunk.js",
+    "main.js.map": "/json2dart-model/static/js/main.ea1c0c77.chunk.js.map",
     "runtime-main.js": "/json2dart-model/static/js/runtime-main.884630d1.js",
     "runtime-main.js.map": "/json2dart-model/static/js/runtime-main.884630d1.js.map",
     "static/js/2.6b990038.chunk.js": "/json2dart-model/static/js/2.6b990038.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.884630d1.js",
     "static/js/2.6b990038.chunk.js",
     "static/css/main.b2af57fd.chunk.css",
-    "static/js/main.94412881.chunk.js"
+    "static/js/main.ea1c0c77.chunk.js"
   ]
 }
