@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.14 (2021-11-13)
+
+
+### Features
+
+* 更改 增加路由 多個轉換方式 ([01b3289](https://github.com/imagine10255/json-to-model-format/commit/01b328993af977b1100c87719745c432761850c8))
+
 ### [1.1.14-beta.0](http://ycgit.o168.net:10080/yc-frontend/210315-member-v4.2/compare/v1.1.14-alpha.0...v1.1.14-beta.0) (2021-07-07)
 
 ### [1.1.14-alpha.0](http://ycgit.o168.net:10080/yc-frontend/210315-member-v4.2/compare/v1.1.13...v1.1.14-alpha.0) (2021-07-07)

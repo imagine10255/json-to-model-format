@@ -1,7 +1,7 @@
 {
   "name": "json-to-model-format",
   "description": "Json to model format",
-  "version": "1.1.14-beta.0",
+  "version": "1.1.14",
   "private": false,
   "author": "imagine10255@gmail.com",
   "homepage": "http://imagine10255.github.io/json-to-model-format",
