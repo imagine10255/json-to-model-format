@@ -14,10 +14,6 @@ declare global {
     }
 }
 
-// 免轉錢包: 只能開一個視窗, 中心錢包: 多開視窗
-window.openWindow = new OpenWindow('startLobbyWindow', false);
-
-
 if (!Intl.PluralRules) {
     require('@formatjs/intl-pluralrules/polyfill');
     require('@formatjs/intl-pluralrules/locale-data/en'); // Add locale data for de

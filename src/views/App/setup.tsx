@@ -1,6 +1,7 @@
 import gridConfig from 'config/grid';
 import {version} from '../../../package.json';
 import {ESiteEnv} from 'config/types';
+import {history} from 'library/react-router';
 
 
 
@@ -12,7 +13,7 @@ function getSetupParam(){
         version: version,
     }));
 
-    return {gridConfig};
+    return {history, gridConfig};
 }
 
 export default getSetupParam;
