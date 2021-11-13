@@ -1,6 +1,7 @@
 # Json To Dart Model
 
-https://imagine10255.github.io/json2dart-model/
+- [Json To Dart](https://imagine10255.github.io/json-to-model-format/#/to-dart)
+- [Json To Typescript](https://imagine10255.github.io/json-to-model-format/#/to-typescript)
 
 <div align="center">
   <!-- Dependency Status -->
