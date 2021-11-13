@@ -4,7 +4,6 @@ import './index.css';
 import App from './views/App/App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import OpenWindow from './library/open-window';
 
 
 
@@ -12,19 +11,6 @@ declare global {
     interface Window {
         openWindow: any;
     }
-}
-
-if (!Intl.PluralRules) {
-    require('@formatjs/intl-pluralrules/polyfill');
-    require('@formatjs/intl-pluralrules/locale-data/en'); // Add locale data for de
-    require('@formatjs/intl-pluralrules/locale-data/zh'); // Add locale data for de
-}
-
-// @ts-ignore
-if (!Intl.RelativeTimeFormat) {
-    require('@formatjs/intl-relativetimeformat/polyfill');
-    require('@formatjs/intl-relativetimeformat/locale-data/en'); // Add locale data for de
-    require('@formatjs/intl-relativetimeformat/locale-data/zh'); // Add locale data for de
 }
 
 ReactDOM.render(

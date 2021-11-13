@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 
 const baseStyles = [
     'color: #fff',
@@ -84,14 +83,6 @@ function danger(title: string, watchData = '') {
 }
 
 
-function mobile(log: any){
-    const dom = document.getElementById('console') as HTMLTextAreaElement;
-    if(dom){
-        const num = dayjs().format('mmss');
-        dom.value = `${num}: ${log}\n${dom.value}`;
-    }
-}
-
 
 const log = {
     primary,
@@ -99,7 +90,6 @@ const log = {
     info,
     warning,
     danger,
-    mobile,
 };
 
 export default log;

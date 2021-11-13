@@ -11,5 +11,5 @@ declare global {
      */
     declare var window: Window & typeof globalThis & {
         siteCode: string;
-    }
+    };
 }

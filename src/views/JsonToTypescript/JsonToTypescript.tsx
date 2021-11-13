@@ -13,30 +13,30 @@ const convertFieldType = (key: string, field: any) => {
     console.log('typeof field', typeof field, key);
     if(field !== null) {
         switch (typeof field) {
-            case 'boolean':
-                return {type: 'bool', default: false};
+        case 'boolean':
+            return {type: 'bool', default: false};
 
-            case 'number':
-                if (field.toString().indexOf('.') != -1) {
-                    return {type: 'double', default: 0};
-                }
-                return {type: 'int', default: 0};
+        case 'number':
+            if (field.toString().indexOf('.') != -1) {
+                return {type: 'double', default: 0};
+            }
+            return {type: 'int', default: 0};
 
-            case 'string':
-                return {type: 'String', default: undefined};
+        case 'string':
+            return {type: 'String', default: undefined};
 
-            case 'object':
-                if(Array.isArray(field)){
-                    if(field.length > 0){
-                        if(['string','number','boolean'].includes((typeof field[0]))){
-                            return {type: 'List<String>', default: undefined};
-                        }
-                        return {type: `List<${toCapitalize(key)}>`, default: undefined, newObjName: toCapitalize(key), newObj: field[0]};
+        case 'object':
+            if(Array.isArray(field)){
+                if(field.length > 0){
+                    if(['string','number','boolean'].includes((typeof field[0]))){
+                        return {type: 'List<String>', default: undefined};
                     }
-                    return {type: `List<dynamic>`, default: undefined};
-
+                    return {type: `List<${toCapitalize(key)}>`, default: undefined, newObjName: toCapitalize(key), newObj: field[0]};
                 }
-                return {type: toCapitalize(key), default: undefined, newObjName: toCapitalize(key), newObj: field};
+                return {type: 'List<dynamic>', default: undefined};
+
+            }
+            return {type: toCapitalize(key), default: undefined, newObjName: toCapitalize(key), newObj: field};
 
         }
     }
@@ -61,7 +61,7 @@ const convertField = (modelName: string|null, jsonObj: any) => {
             }
         }
 
-        if(modelName != null){
+        if(modelName !== null){
             dataChild.push({
                 name: modelName,
                 field: field,
@@ -75,21 +75,21 @@ const convertField = (modelName: string|null, jsonObj: any) => {
 
 };
 
-
-const handleDownload = (modelName: string, data: string) => {
-    //藉型別陣列建構的 blob 來建立 URL
-    let fileName = `${UpperCaseToLowerLineCase(modelName)}.dart`;
-    let blob = new Blob([data], {
-        type: "application/octet-stream",
-    });
-    var href = URL.createObjectURL(blob);
-    // 從 Blob 取出資料
-    var link = document.createElement("a");
-    document.body.appendChild(link);
-    link.href = href;
-    link.download = fileName;
-    link.click();
-};
+//
+// const handleDownload = (modelName: string, data: string) => {
+//     //藉型別陣列建構的 blob 來建立 URL
+//     let fileName = `${UpperCaseToLowerLineCase(modelName)}.dart`;
+//     let blob = new Blob([data], {
+//         type: 'application/octet-stream',
+//     });
+//     var href = URL.createObjectURL(blob);
+//     // 從 Blob 取出資料
+//     var link = document.createElement('a');
+//     document.body.appendChild(link);
+//     link.href = href;
+//     link.download = fileName;
+//     link.click();
+// };
 
 const JsonToTypescript = () => {
     const {control, watch, setValue} = useForm<IFormData>();
@@ -112,7 +112,7 @@ const JsonToTypescript = () => {
         }
     }
 }
-`.trim())
+`.trim());
     }, []);
 
 
@@ -129,56 +129,56 @@ const JsonToTypescript = () => {
 
         return `
 ${data.map(row => {
-            return `
+        return `
 interface ${row.name} {
 ${row.field.join('\n')} 
 }
-`
-}).join('\n').trim()}
+`;
+    }).join('\n').trim()}
 
     `;
-};
+    };
 
     const convertData = renderDartModel();
 
     return (
         <>
 
-                <div className="text-center">
-                    <h1>Json To Typescript Class</h1>
-                </div>
-                <Container className="pt-3">
-                    <Row>
-                        <Col col>
-                            <Row>
+            <div className="text-center">
+                <h1>Json To Typescript Class</h1>
+            </div>
+            <Container className="pt-3">
+                <Row>
+                    <Col col>
+                        <Row>
 
-                                <Col col={24}>
-                                    <Controller
-                                        control={control}
-                                        name="jsonString"
-                                        defaultValue=""
-                                        render={({field}) => {
-                                            return (<textarea
-                                                style={{width: '100%', height: '100vh'}}
-                                                {...field}
-                                            />);
-                                        }}
-                                    />
-                                </Col>
-                            </Row>
+                            <Col col={24}>
+                                <Controller
+                                    control={control}
+                                    name="jsonString"
+                                    defaultValue=""
+                                    render={({field}) => {
+                                        return (<textarea
+                                            style={{width: '100%', height: '100vh'}}
+                                            {...field}
+                                        />);
+                                    }}
+                                />
+                            </Col>
+                        </Row>
 
-                        </Col>
-                        <Col col>
-                            <textarea
-                                style={{width: '100%', height: '100vh'}}
-                                value={convertData}
-                            />
-                        </Col>
+                    </Col>
+                    <Col col>
+                        <textarea
+                            style={{width: '100%', height: '100vh'}}
+                            value={convertData}
+                        />
+                    </Col>
 
-                    </Row>
+                </Row>
 
 
-                </Container>
+            </Container>
         </>
     );
 };

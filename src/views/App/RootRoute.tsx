@@ -17,7 +17,7 @@ const RootRoute = () => {
             {/* NotFound */}
             <Route path="*" children={<NotFound/>}/>
         </Switch>
-    </Router>
+    </Router>;
 };
 
 export default RootRoute;

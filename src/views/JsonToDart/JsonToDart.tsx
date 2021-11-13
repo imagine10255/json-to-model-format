@@ -1,5 +1,4 @@
-import styled from 'styled-components/macro';
-import {Col, Container, GridThemeProvider, Row} from 'library/styled-bs-grid';
+import {Col, Container, Row} from 'library/styled-bs-grid';
 import {Controller, useForm} from 'react-hook-form';
 import {IFormData} from './types';
 import {useMemo} from 'react';
@@ -14,30 +13,30 @@ const convertFieldType = (key: string, field: any) => {
     console.log('typeof field', typeof field, key);
     if(field !== null) {
         switch (typeof field) {
-            case 'boolean':
-                return {type: 'bool', default: false};
+        case 'boolean':
+            return {type: 'bool', default: false};
 
-            case 'number':
-                if (field.toString().indexOf('.') != -1) {
-                    return {type: 'double', default: 0};
-                }
-                return {type: 'int', default: 0};
+        case 'number':
+            if (field.toString().indexOf('.') !== -1) {
+                return {type: 'double', default: 0};
+            }
+            return {type: 'int', default: 0};
 
-            case 'string':
-                return {type: 'String', default: undefined};
+        case 'string':
+            return {type: 'String', default: undefined};
 
-            case 'object':
-                if(Array.isArray(field)){
-                    if(field.length > 0){
-                        if(['string','number','boolean'].includes((typeof field[0]))){
-                            return {type: 'List<String>', default: undefined};
-                        }
-                        return {type: `List<${toCapitalize(key)}>`, default: undefined, newObjName: toCapitalize(key), newObj: field[0]};
+        case 'object':
+            if(Array.isArray(field)){
+                if(field.length > 0){
+                    if(['string','number','boolean'].includes((typeof field[0]))){
+                        return {type: 'List<String>', default: undefined};
                     }
-                    return {type: `List<dynamic>`, default: undefined};
-
+                    return {type: `List<${toCapitalize(key)}>`, default: undefined, newObjName: toCapitalize(key), newObj: field[0]};
                 }
-                return {type: toCapitalize(key), default: undefined, newObjName: toCapitalize(key), newObj: field};
+                return {type: 'List<dynamic>', default: undefined};
+
+            }
+            return {type: toCapitalize(key), default: undefined, newObjName: toCapitalize(key), newObj: field};
 
         }
     }
@@ -85,11 +84,11 @@ const handleDownload = (modelName: string, data: string) => {
     //藉型別陣列建構的 blob 來建立 URL
     let fileName = `${UpperCaseToLowerLineCase(modelName)}.dart`;
     let blob = new Blob([data], {
-        type: "application/octet-stream",
+        type: 'application/octet-stream',
     });
     var href = URL.createObjectURL(blob);
     // 從 Blob 取出資料
-    var link = document.createElement("a");
+    var link = document.createElement('a');
     document.body.appendChild(link);
     link.href = href;
     link.download = fileName;
@@ -120,7 +119,7 @@ import 'package:json_annotation/json_annotation.dart';
 part '${UpperCaseToLowerLineCase(modelName)}.g.dart';
 
 ${data.map(row => {
-            return `
+        return `
 ${isUseCopyWith ? '@CopyWith()':''}
 @JsonSerializable()
 class ${row.name} {
@@ -134,79 +133,79 @@ ${row.field.join('\n')}
   factory ${row.name}.fromJson(Map<String, dynamic> json) => _$${row.name}FromJson(json);
   Map<String, dynamic> toJson() => _$${row.name}ToJson(this);
 }
-`
-}).join('\n')}
+`;
+    }).join('\n')}
 
     `;
-};
+    };
 
     const convertData = renderDartModel();
 
     return (
         <>
 
-                <div className="text-center">
-                    <h1>Json To Dart Model</h1>
-                </div>
-                <Container className="pt-3">
-                    <Row>
-                        <Col col>
-                            <Row>
-                                <Col col={24}>
-                                    <Controller
-                                        control={control}
-                                        name="modelName"
-                                        defaultValue=""
-                                        render={({field}) => {
-                                            return (<input
-                                                style={{width: '100%'}}
-                                                type="text"
-                                                {...field}
-                                            />);
-                                        }}
-                                    />
+            <div className="text-center">
+                <h1>Json To Dart Model</h1>
+            </div>
+            <Container className="pt-3">
+                <Row>
+                    <Col col>
+                        <Row>
+                            <Col col={24}>
+                                <Controller
+                                    control={control}
+                                    name="modelName"
+                                    defaultValue=""
+                                    render={({field}) => {
+                                        return (<input
+                                            style={{width: '100%'}}
+                                            type="text"
+                                            {...field}
+                                        />);
+                                    }}
+                                />
 
-                                </Col>
-                                <Col col={24}>
-                                    <Controller
-                                        control={control}
-                                        name="isUseCopyWith"
-                                        defaultValue=""
-                                        render={({field}) => {
-                                            return (<input
-                                                type="checkbox"
-                                                {...field}
-                                            />);
-                                        }}
-                                    />
+                            </Col>
+                            <Col col={24}>
+                                <Controller
+                                    control={control}
+                                    name="isUseCopyWith"
+                                    defaultValue=""
+                                    render={({field}) => {
+                                        return (<input
+                                            type="checkbox"
+                                            {...field}
+                                        />);
+                                    }}
+                                />
                                      use CopyWith
-                                    <Controller
-                                        control={control}
-                                        name="jsonString"
-                                        defaultValue=""
-                                        render={({field}) => {
-                                            return (<textarea
-                                                style={{width: '100%', height: '100vh'}}
-                                                {...field}
-                                            />);
-                                        }}
-                                    />
-                                </Col>
-                            </Row>
+                                <Controller
+                                    control={control}
+                                    name="jsonString"
+                                    defaultValue=""
+                                    render={({field}) => {
+                                        return (<textarea
+                                            style={{width: '100%', height: '100vh'}}
+                                            {...field}
+                                        />);
+                                    }}
+                                />
+                            </Col>
+                        </Row>
 
-                        </Col>
-                        <Col col>
-                            <button type="button" onClick={() => handleDownload(modelName, convertData)}>Download</button>
-                            <textarea
-                                style={{width: '100%', height: '100vh'}}
-                                value={convertData}
-                            />
-                        </Col>
+                    </Col>
+                    <Col col>
+                        <button type="button" onClick={() => handleDownload(modelName, convertData)}>Download</button>
+                        <textarea
+                            style={{width: '100%', height: '100vh'}}
+                            value={convertData}
+                        />
+                    </Col>
 
-                    </Row>
+                </Row>
 
 
-                </Container>
+            </Container>
         </>
     );
 };
