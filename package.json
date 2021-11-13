@@ -1,14 +1,14 @@
 {
-  "name": "json2dart-model",
-  "description": "Json to dart model",
+  "name": "json-to-model-format",
+  "description": "Json to model format",
   "version": "1.1.14-beta.0",
   "private": false,
   "author": "imagine10255@gmail.com",
-  "homepage": "http://imagine10255.github.io/json2dart-model",
+  "homepage": "http://imagine10255.github.io/json-to-model-format",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagine10255/json2dart-model"
+    "url": "https://github.com/imagine10255/json-to-model-format"
   },
   "engines": {
     "npm": ">=6",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "build": "react-scripts build PUBLIC_URL=/json2dart-model",
+    "build": "react-scripts build PUBLIC_URL=/json-to-model-format",
     "test": "react-scripts test",
     "gitlog": "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'",
     "lint:fix": "eslint ./src --fix",
@@ -27,6 +27,7 @@
     "release:patch": "standard-version -r patch",
     "release:beta": "standard-version --prerelease beta",
     "release:alpha": "standard-version --prerelease alpha",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {

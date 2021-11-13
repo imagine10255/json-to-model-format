@@ -1,14 +1,11 @@
-import styled, {ThemeProvider} from 'styled-components/macro';
-import {Col, Container, GridThemeProvider, Row} from 'library/styled-bs-grid';
-import getSetupParam from './setup';
+import {Col, Container, Row} from 'library/styled-bs-grid';
 import {Controller, useForm} from 'react-hook-form';
 import {IFormData} from './types';
 import {useEffect, useMemo} from 'react';
 import {isJSON} from 'utils/equal';
-import {toCapitalize, UpperCaseToLowerLineCase} from '../../utils/format';
+import {toCapitalize, UpperCaseToLowerLineCase} from 'utils/format';
 
 
-const setup = getSetupParam();
 
 
 const convertFieldType = (key: string, field: any) => {
@@ -94,7 +91,7 @@ const handleDownload = (modelName: string, data: string) => {
     link.click();
 };
 
-const AppJs = () => {
+const JsonToTypescript = () => {
     const {control, watch, setValue} = useForm<IFormData>();
 
     const [modelName, jsonString, isUseCopyWith] = watch(['modelName', 'jsonString', 'isUseCopyWith']);
@@ -145,7 +142,7 @@ ${row.field.join('\n')}
     const convertData = renderDartModel();
 
     return (
-        <GridThemeProvider gridTheme={setup.gridConfig}>
+        <>
 
                 <div className="text-center">
                     <h1>Json To Typescript Class</h1>
@@ -182,24 +179,9 @@ ${row.field.join('\n')}
 
 
                 </Container>
-        </GridThemeProvider>
+        </>
     );
 };
 
-export default AppJs;
+export default JsonToTypescript;
 
-
-const Console = styled.textarea`
-  position: fixed;
-  bottom: 0;
-  z-index: 99;
-  display: flex;
-  font-size: 10px;
-  border: none;
-  background: #1f1f1f;
-  color: #ccb444;
-  border-radius: 0;
-  width: 100%;
-  height: 60px;
-
-`;

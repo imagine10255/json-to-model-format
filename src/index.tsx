@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './views/App/AppJs';
+import App from './views/App/App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import OpenWindow from './library/open-window';
@@ -13,10 +13,6 @@ declare global {
         openWindow: any;
     }
 }
-
-// 免轉錢包: 只能開一個視窗, 中心錢包: 多開視窗
-window.openWindow = new OpenWindow('startLobbyWindow', false);
-
 
 if (!Intl.PluralRules) {
     require('@formatjs/intl-pluralrules/polyfill');
